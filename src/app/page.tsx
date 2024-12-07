@@ -1,101 +1,162 @@
+import React from "react";
 import Image from "next/image";
+import register from "./register";
+import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDays} from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot} from '@fortawesome/free-solid-svg-icons';
+import { faClock} from '@fortawesome/free-solid-svg-icons'
+import { Poppins, Schoolbell, Public_Sans } from 'next/font/google'
+
+const poppins = Poppins({ 
+  weight: '400',
+  subsets: ['latin'] 
+})
+const schoolbell = Schoolbell({
+  weight: '400',
+  subsets: ['latin']
+})
+const publicSans = Public_Sans({
+  weight: '400',
+  subsets: ['latin']
+})
+// const peaceSans = Peace_Sans({
+//   weight: '400',
+//   subsets: ['latin']
+// })
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="h-[100%]">
+    <div className="bg-gray-950" data-aos="zoom-in">
+      <div className=" ml-20 mr-20 pb-10 pt-8">
+        <div className="p-10 border flex flex-row" data-aos="flip-left" data-aos-delay="100">
+        <div className="flex flex-col  w-[40%]">
+        <div className={`text-[14px] flex flex-row`}
+        data-aos="fade-down"
+        data-aos-delay="300">
+          <Image src="/logo.jpg" alt="logo" width={25} height={25} />
+          <div className="ml-2"> ORGLOBAL TECH NETWORK LTD</div>
+          </div>
+        <div className=" text-[33.9px] text-amber-500"
+        data-aos="fade-down"
+        data-aos-delay="400">TECH TRAINING WORKSHOP</div>
+        <div className={`text-[15px] ${publicSans.className}`}
+        data-aos="fade-down"
+        data-aos-delay="500">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Incidunt quaerat dolorum dolor quam. Enim error recusandae.</div>
+      </div>
+      
+      <div className="flex flex-col ml-10 w-[50%]">
+        <div className= {`text-[36px] -rotate-12  ${schoolbell.className}`} >Getting Started in Tech</div>
+        <div>
+          <imag
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
-  );
+    </div>
+    </div>
+      <div className="bg-slate-300 w-[100%]" data-aos="zoom-in">
+        <div className="items-center flex flex-col">
+        <div className="bg-amber-500 w-[90%] h-[25%] text-[12px] text-black pt-2 pb-2 pl-5  items-center justify-center flex flex-row"
+        data-aos="flip-left">
+        <div className="w-[33.3%] flex flex-row">
+        <FontAwesomeIcon icon={faCalendarDays} className=" w-[20px] mr-2" />
+          <div className=" ">
+            <p> 6th -31st January, 2025</p>
+            <p> 6th -31st January, 2025</p>
+          </div>
+        </div>
+        <div className=" w-[33.3%] item-center justify-center flex ">
+        <FontAwesomeIcon icon={faClock} className=" w-[20px] mr-2" />
+          <div>10 persons/class</div>
+        </div>
+        <div className=" w-[33%] flex mr-[20px] justify-end">
+          <FontAwesomeIcon icon={faLocationDot} className="w-[20px] mr-2" />
+          <div>
+            <p>Online & In-Person Delivery</p>
+            <hr />
+            <p>H34, Heritage Mall, Cocoa House, <br /> Dugbe, Ibadan</p>
+          </div>
+        </div>
+        </div>
+        <div className={`text-[] w-[70%] ${publicSans.className}`}>
+          <p className="text-[#404040] text-[25px]" data-aos="fade-down">RUNDOWN</p>
+          <Link href="register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
+               data-aos="slide-down" 
+               data-aos-delay="100"> 
+            <div className="w-[18%] rounded-3xl mr-5 bg-[#f8df8c]">
+              <div className="text-center pl-3 pr-3"> 9 AM </div>
+              </div>
+            <div className="w-[80%] hover:text-amber-500 hover:cursor-pointer"> Web Development</div>
+          </Link>
+          <Link href="register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
+               data-aos="fade-up" 
+               data-aos-delay="200"> 
+            <div className="w-[18%] rounded-3xl mr-5 bg-[#c7c8c7]">
+              <div className="text-center pl-3 pr-3"> 9 AM </div>
+              </div>
+            <div className="w-[80%] hover:text-slate-500 hover:cursor-pointer"> Digital Marketing</div>
+            </Link>
+          <Link href="/register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
+               data-aos="fade-up" 
+               data-aos-delay="300"> 
+            <div className="w-[18%] rounded-3xl mr-5 bg-[#f8df8c]">
+              <div className="text-center pl-3 pr-3"> 9 AM </div>
+              </div>
+            <div className="w-[80%] hover:text-amber-500 hover:cursor-pointer"> Programming</div>
+          </Link>
+          <Link href="/register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
+               data-aos="fade-up" 
+               data-aos-delay="400"> 
+            <div className="w-[18%] rounded-3xl mr-5 bg-[#c7c8c7]">
+              <div className="text-center pl-3 pr-3"> 9 AM </div>
+              </div>
+            <div className="w-[80%] hover:text-slate-500 hover:cursor-pointer"> Blockchain</div>
+            </Link>
+          <Link href="/register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
+               data-aos="fade-up" 
+               data-aos-delay="500"> 
+            <div className="w-[18%] rounded-3xl mr-5 bg-[#f8df8c]">
+              <div className="text-center pl-3 pr-3"> 9 AM </div>
+              </div>
+            <div className="w-[80%] hover:text-amber-500 hover:cursor-pointer"> Cloud Computing</div>
+            </Link>
+          <Link href="/register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
+               data-aos="fade-up" 
+               data-aos-delay="600"> 
+            <div className="w-[18%] rounded-3xl mr-5 bg-[#c7c8c7]">
+              <div className="text-center pl-3 pr-3"> 9 AM </div>
+              </div>
+            <div className="w-[80%] hover:text-slate-500 hover:cursor-pointer"> Data Science</div>
+              </Link>
+          <Link href="/register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
+               data-aos="fade-up" 
+               data-aos-delay="700"> 
+            <div className="w-[18%] rounded-3xl mr-5 bg-[#f8df8c]">
+              <div className="text-center pl-3 pr-3"> 9 AM </div>
+              </div>
+            <div className="w-[80%] hover:text-amber-500 hover:cursor-pointer"> Product Management</div>
+            </Link>
+          <Link href="/register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
+               data-aos="fade-up" 
+               data-aos-delay="800"> 
+            <div className="w-[18%] rounded-3xl mr-5 bg-[#c7c8c7]">
+              <div className="text-center pl-3 pr-3"> 9 AM </div>
+              </div>
+            <div className="w-[80%] hover:text-slate-500 hover:cursor-pointer"> UI/UX</div>
+              </Link>
+          <Link href="/register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
+               data-aos="fade-up" 
+               data-aos-delay="900"> 
+            <div className="w-[18%] rounded-3xl mr-5 bg-[#f8df8c]">
+              <div className="text-center pl-3 pr-3"> 9 AM </div>
+              </div>
+            <div className="w-[80%] hover:text-amber-500 hover:cursor-pointer"> Basic Computer Operation</div>
+            </Link>
+        </div>
+        </div>
+      </div>
+  </div>
+  )
 }
