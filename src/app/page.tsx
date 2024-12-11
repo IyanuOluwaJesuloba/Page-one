@@ -1,12 +1,12 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import register from "./register";
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays} from '@fortawesome/free-solid-svg-icons';
 import { faLocationDot} from '@fortawesome/free-solid-svg-icons';
-import { faClock} from '@fortawesome/free-solid-svg-icons'
-import { Poppins, Schoolbell, Public_Sans } from 'next/font/google'
+import { faClock} from '@fortawesome/free-solid-svg-icons';
+import { Poppins, Schoolbell, Public_Sans } from 'next/font/google';
 
 const poppins = Poppins({ 
   weight: '400',
@@ -26,7 +26,25 @@ const publicSans = Public_Sans({
 // })
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState <string | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate a delay
+      setData("Data loaded!");
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
   return (
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-950">
+    {loading ? (
+      <p className="text-lg " >Loading, please wait...</p>
+    ) : (
     <div className="h-[100%]">
     <div className="bg-gray-950" data-aos="zoom-in">
       <div className=" ml-20 mr-20 pb-10 pt-8">
@@ -36,21 +54,24 @@ export default function Home() {
         data-aos="fade-down"
         data-aos-delay="300">
           <Image src="/logo.jpg" alt="logo" width={25} height={25} />
-          <div className="ml-2"> ORGLOBAL TECH NETWORK LTD</div>
+          <div className="ml-2 font-bold text-[20px]" style={{ fontFamily: 'Peace Sans' }}> ORGLOBAL TECH NETWORK LTD</div>
           </div>
-        <div className=" text-[33.9px] text-amber-500"
+        <div className=" text-[40px] font-bold text-amber-500"
         data-aos="fade-down"
-        data-aos-delay="400">TECH TRAINING WORKSHOP</div>
+        data-aos-delay="400" style={{ fontFamily: 'Peace Sans' }}>TECH TRAINING WORKSHOP</div>
         <div className={`text-[15px] ${publicSans.className}`}
         data-aos="fade-down"
         data-aos-delay="500">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Incidunt quaerat dolorum dolor quam. Enim error recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Incidunt quaerat dolorum dolor quam. Enim error recusandae.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
           Incidunt quaerat dolorum dolor quam. Enim error recusandae.</div>
       </div>
       
-      <div className="flex flex-col ml-10 w-[50%]">
-        <div className= {`text-[36px] -rotate-12  ${schoolbell.className}`} >Getting Started in Tech</div>
-        <div>
-          <imag
+      <div className="flex flex-col ml-10 w-[60%]">
+        <div className= {`text-[36px] -rotate-12 justify-center mt-[50px] mx-auto ${schoolbell.className}`} >Getting Started in Tech</div>
+        <div className="">
+          <img src="/image.jpg" alt="Image of Instructor" className="h-[200px] w-[200px] flex flex-col rounded-full ml-[400px]" />
+          <p className="ml-[450px]"> Akinbola Abudu</p>
         </div>
       </div>
     </div>
@@ -81,7 +102,7 @@ export default function Home() {
         </div>
         </div>
         <div className={`text-[] w-[70%] ${publicSans.className}`}>
-          <p className="text-[#404040] text-[25px]" data-aos="fade-down">RUNDOWN</p>
+          <p className="text-[#404040] text-[33px] font-bold" data-aos="fade-down" style={{ fontFamily: 'Peace Sans'}}>RUNDOWN</p>
           <Link href="register" className="bg-white p-3 text-black rounded-3xl flex flex-row mb-3" 
                data-aos="slide-down" 
                data-aos-delay="100"> 
@@ -158,5 +179,7 @@ export default function Home() {
         </div>
       </div>
   </div>
-  )
+  )}
+  </div>
+  );
 }
